@@ -3,10 +3,13 @@ const campSchema = new mongoose.Schema({
     schemeName: String,
     sponsoredAgency: String,
     eventTitle: String,
-    date: Date,
+    dateTime: String,
     venue: String,
-    guest: String,
-    guestDesignation: String
+    guestDetails: String,
+    action: {
+      type: Boolean,
+      default: false,
+    },
   });
 const Camp = mongoose.model('Camp', campSchema);  
 
