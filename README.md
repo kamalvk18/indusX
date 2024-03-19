@@ -2,8 +2,8 @@
 
 # Contributers:  
 Raju : https://github.com/rajupeddireddy
-Prachi:
-Kamal:
+Prachi: 
+Kamal: https://github.com/kamalvk18
 
 # EdTech Learning Management System Website
 ## About the LMS website 
