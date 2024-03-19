@@ -2,9 +2,6 @@ import React from "react";
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-
-
 import Login from "./components/login";
 import SignUp from "./components/signup_component";
 import UserDetails from "./components/userDetails";
@@ -12,13 +9,10 @@ import AdminHome from "./components/candidate_view";
 import JustViewCandidate from "./components/just_view_cand";
 import CandidateUpdate from "./components/update_cand";
 import Mob_home from "./components/Mob_home";
-
-import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
-import Footer from './components/Footer';
 import './App.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -32,7 +26,8 @@ import View from "./components/View";
 import HandleEvent from "./components/HandleEvent";
 import CreatePayment from "./components/CreatePayment";
 import ManagePayment from './components/ManagePayment';
-
+import Header from "./components/Header/Header";
+import Footer from './components/Footer/Footer'
 
 
 function App() {
@@ -41,8 +36,7 @@ function App() {
     
     <Router>
       <div className="App">
-      <Navbar />
-      
+      <Header />  
         <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About />} />
