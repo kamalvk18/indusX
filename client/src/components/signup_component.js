@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import "./css/main.css"
-import "./CSSFiles/signup_components.css"
+import "./CSSFiles/signup_component.css"
 
 export default function SignUp() {
   const [fname, setFname] = useState("");
