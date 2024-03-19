@@ -1,18 +1,16 @@
 # Internship-work
 
 # Contributers:  
-Ashita Sirvastava : https://github.com/AshitaSri   
-Dev Pratap Singh : https://github.com/Devps2003  
-Vishwas : https://github.com/Vishu-uut  
-Shaurya : https://github.com/Shaurya0112
-
+Raju : https://github.com/rajupeddireddy
+Prachi: 
+Kamal: https://github.com/kamalvk18
 
 # EdTech Learning Management System Website
 ## About the LMS website 
 
 The EdTech Learning Management System is designed to provide an interactive platform for educational purposes. It offers features such as course management, user authentication, and more.
 
-This repository contains two folders: `client-main` and `server-new`, which respectively hold the frontend and backend code for the LMS.
+This repository contains two folders: `client` and `server`, which respectively hold the frontend and backend code for the LMS.
 
 ## Getting Started
 
@@ -23,7 +21,7 @@ To get the website up and running on your computer, follow these steps:
 Clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/Vishu-uut/Internship-work.git
+https://github.com/kamalvk18/indusX.git
 ```
 
 ### 2. Navigate to the Repository
@@ -31,12 +29,12 @@ git clone https://github.com/Vishu-uut/Internship-work.git
 Navigate into the cloned repository directory:
 
 ```bash
-cd Internship-work
+cd indusX
 ```
 
 ### 3. Install Dependencies
 
-Make sure you have Node.js installed on your computer. Then, navigate to each folder (`client-main` and `server-new`) and delete the `node_modules` folder if it exists:
+Make sure you have Node.js installed on your computer. Then, navigate to each folder (`client` and `server`) and delete the `node_modules` folder if it exists:
 
 ```bash
 rm -rf node_modules
@@ -44,10 +42,10 @@ rm -rf node_modules
 
 ### 4. Start the Backend Server
 
-Navigate to the `server-new` folder and install the backend dependencies:
+Navigate to the `server` folder and install the backend dependencies:
 
 ```bash
-cd server-new
+cd server
 npm install
 ```
 
@@ -65,11 +63,19 @@ npm start
 
 ### 5. Start the Frontend Application
 
-Navigate to the `client-main` folder and install the frontend dependencies:
+Navigate to the `client` folder and install the frontend dependencies:
 
 ```bash
-cd ../client-main
+cd ../client
 npm install
+```
+
+(optional) - If any dependecy errors, install those perticular things which shows in your terminal
+
+```bash
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/material @mui/styled-engine-sc styled-components
+npm install @mui/icons-material
 ```
 
 Start the frontend application:
