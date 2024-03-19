@@ -23,7 +23,7 @@ To get the website up and running on your computer, follow these steps:
 Clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/Vishu-uut/Internship-work.git
+https://github.com/kamalvk18/indusX.git
 ```
 
 ### 2. Navigate to the Repository
