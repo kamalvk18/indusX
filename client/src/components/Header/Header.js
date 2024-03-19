@@ -47,7 +47,7 @@ export default function Header() {
 
             }}
           >
-            <span style={{ color: '#ffffff', height:'40px', padding:'5px 5px 0px 5px',fontWeight: 800, backgroundColor: '#ff551d',  fontStyle: 'normal', fontSize:'32px', borderRadius:'2px',textAlign:'center' }}>IndusX </span>
+            <span style={{ color: '#ffffff', height:'40px', padding:'5px 5px 0px 5px',fontWeight: 800, backgroundColor: '#1a2e35',  fontStyle: 'normal', fontSize:'32px', borderRadius:'2px',textAlign:'center' }}>IndusX </span>
             
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -108,7 +108,7 @@ export default function Header() {
               lineHeight: 1
             }}
           >
-            <span style={{ color: '#ffffff', fontSize:'28px', borderRadius:'2px', fontWeight: 800, backgroundColor: '#ff551d', padding: '5px 5px 5px 5px', fontStyle: 'normal', marginRight: '4px' }}>IndusX</span>
+            <span style={{ color: '#ffffff', fontSize:'28px', borderRadius:'2px', fontWeight: 800, backgroundColor: '#1a2e35', padding: '5px 5px 5px 5px', fontStyle: 'normal', marginRight: '4px' }}>IndusX</span>
           </Typography>
         
           <Box sx={{ flexGrow: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: 'auto' }}>
