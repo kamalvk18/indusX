@@ -54,7 +54,7 @@ function App() {
             element={isLoggedIn === "true" ? <UserDetails /> : <Login />}
           />
           <Route path="/login-user" element={<Login />} />
-          <Route path="/sign-up" element={<RegistrationForm/>} />
+          <Route path="/sign-up" element={<SignUp />} />
           <Route path="/userDetails" element={<UserDetails />} />
           <Route path='/just-view-candidate' element={<JustViewCandidate/>} /> 
           <Route path ="/Home" element={<AdminHome/>}/>
