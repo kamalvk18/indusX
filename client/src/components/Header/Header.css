@@ -1,13 +1,21 @@
-.logo {
-    width: 30px;
-  }
+
+.logo-image{
+    height: auto;
+    width: 150px;
+}
 
 @media (min-width: 899px){
-    .logo{
+    .logo-image{
         display: none;
     }
 }
 
 .logo-sm{
-    width: 40px;
+    width: 200px;
+}
+@media (max-width: 899px){
+    .logo-sm{
+        display: none;
+    }
+
 }

@@ -30,25 +30,8 @@ export default function Header() {
     <AppBar position="sticky" sx={{ backgroundColor: '#fff', paddingTop:'3px', paddingBottom:'6px',boxShadow: '0px 1px 5px 0px #bfbfbf', color: '#000' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant='h6'
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontWeight: 'bold',
-              letterSpacing: '.1rem',
-              color: 'inherit',
-              textDecoration: 'none',
-              lineHeight: 1,
-              fontStyle: 'italic'
-
-            }}
-          >
-            <span style={{ color: '#ffffff', height:'40px', padding:'5px 5px 0px 5px',fontWeight: 800, backgroundColor: '#1a2e35',  fontStyle: 'normal', fontSize:'32px', borderRadius:'2px',textAlign:'center' }}>SGRS Academics </span>
-            
+          <Typography>
+            <img src='https://sgrsgroup.com/wp-content/uploads/2023/06/1200x300px.png' className='logo-sm'/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -89,26 +72,8 @@ export default function Header() {
                 </MenuItem>
             </Menu>
           </Box>
-          <img src={logo} className='logo-sm' alt="Company Logo" />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'Roboto',
-              fontWeight: 'bold',
-              color: 'inherit',
-              letterSpacing: '.1rem',
-              fontStyle: 'italic',
-              textDecoration: 'none',
-              lineHeight: 1
-            }}
-          >
-            <span style={{ color: '#ffffff', fontSize:'28px', borderRadius:'2px', fontWeight: 800, backgroundColor: '#1a2e35', padding: '5px 5px 5px 5px', fontStyle: 'normal', marginRight: '4px' }}>SGRS Academics</span>
+          <Typography sx={{flexGrow: 1, }} >
+            <img src='https://sgrsgroup.com/wp-content/uploads/2023/06/1200x300px.png' className='logo-image'/>
           </Typography>
         
           <Box sx={{ flexGrow: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: 'auto' }}>
