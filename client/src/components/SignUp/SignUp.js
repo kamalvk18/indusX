@@ -10,7 +10,6 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("Admin");
-  const [secretKey, setSecretKey] = useState("");
 
   const handleSubmit = (e) => {    
       e.preventDefault();
@@ -42,114 +41,57 @@ export default function SignUp() {
     }
   
   return (
-    <div className="container-login100">
-      <div className="signup-card">
-      <div className="login100-pic js-tilt" data-tilt>
-            <img src="https://firebasestorage.googleapis.com/v0/b/edutech-f8171.appspot.com/o/images%2Fimg-01.png?alt=media&token=70eb254d-c7e4-4cb2-9504-8d7b3fd3af63" alt="IMG" />
-          </div>
-        <form onSubmit={handleSubmit} className="login100-form">
-          <h3 className="login100-form-title">Sign Up</h3>
+      <div className="signup-container">
+        <form onSubmit={handleSubmit} className="signup-box">
+          <span className="signup-title">Sign Up</span>
           <div>
-            <h4 className="reg">Register As</h4>
-            <div className="user user-box">
-            <div className="user">
-            <p>User</p>
-            <input
-            className="radio"
-              type="radio"
-              name="UserType"
-              value="User"
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            </div>
-            <div className="user">
-            <p>Mobiliser</p>
-            <input
-            className="radio"
-              type="radio"
-              name="UserType"
-              value="Admin"
-              checked
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            </div>
-            </div>
-          </div>
-          {/* {userType == "Admin" ? (
-            <div className="mb-3">
-              <label>Secret Key</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Secret Key"
-                onChange={(e) => setSecretKey(e.target.value)}
-              />
-            </div>
-          ) : null} */}
-
-          <div className="mb-3 wrap-input100">
             <input
               type="text"
-              className="form-control input100"
+              className="input"
               placeholder="First name"
               onChange={(e) => setFname(e.target.value)}
             />
-            <span className="focus-input100"></span>
-              <span className="symbol-input100">
-                <i className="fa fa-user" aria-hidden="true"></i>
-              </span>
           </div>
 
-          <div className="mb-3 wrap-input100">
+          <div>
             <input
               type="text"
-              className="form-control input100"
+              className="input"
               placeholder="Last name"
               onChange={(e) => setLname(e.target.value)}
             />
-            <span className="focus-input100"></span>
-              <span className="symbol-input100">
-                <i className="fa fa-user" aria-hidden="true"></i>
-              </span>
           </div>
 
-          <div className="mb-3 wrap-input100">
+          <div>
             <input
               type="email"
-              className="form-control input100"
+              className="input"
               placeholder="Enter email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <span className="focus-input100"></span>
-              <span className="symbol-input100">
-                <i className="fa fa-envelope" aria-hidden="true"></i>
-              </span>
           </div>
 
-          <div className="mb-3 wrap-input100">
+          <div>
             <input
               type="password"
-              className="form-control input100"
+              className="input"
               placeholder="Enter password"
               onChange={(e) => setPassword(e.target.value)}
             />
-             <span className="focus-input100"></span>
-              <span className="symbol-input100">
-                <i className="fa fa-lock" aria-hidden="true"></i>
-              </span>
           </div>
 
-          <div className="d-grid container-login100-form-btn">
-            <button type="submit" className="btn login100-form-btn">
+          <div >
+            <button type="submit" className="signup-btn">
               Sign Up
             </button>
           </div>
-          <p className="forgot-password text-center p-t-12">
-            <p className="txt1">Already registered </p>
-            <a  className="txt2" href="/sign-in">sign in?</a>
-          </p>
+
+          <div className="txt">
+            <p>Already registered? </p>
+            <a href="/sign-in">sign in</a>
+          </div>
+
         </form>
       </div>
-    </div>
   );
 }
