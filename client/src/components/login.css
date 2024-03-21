@@ -1,90 +1,45 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
-
-* {
-  box-sizing: border-box;
-}
-body {
-  background: #1c8ef9 ;
-  min-height: 100vh;
-  display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+.login-container{
+  font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-family: "Fira Sans", sans-serif;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label,
-span {
-  font-weight: 500;
-  font-family: "Fira Sans", sans-serif;
-}
-
-body,
-html,
-.App,
-#root,
-.auth-wrapper {
-  width: 100%;
-  height: 100%;
-}
-
-.navbar-light {
-  background-color: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-}
-
-.auth-wrapper {
+.login-box{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: left;
+  width: 485px;
+  border-radius: 33px;
+  background-color: #DBE2EF !important;
+  padding: 10px;
+  margin: 30px 0;
+}
+.login-title{
+margin: 15px 0 25px 15px;
+text-align: left;
+}
+.input{
+  border-radius: 10px;
+  background-color: #FFFFFF !important;
+  color: black;
+  border:1px solid #3F72AF;
+  width: 80%;
+  margin: 15px 35px;
 }
 
-.auth-inner {
-  width: 450px;
-  margin: auto;
-  background: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  padding: 40px 55px 45px 55px;
-  border-radius: 15px;
-  transition: all 0.3s;
+.login-btn{
+  width: 80%;
+  background-color: #112D4E;
+  color: #FFFFFF;
+  margin: 15px 35px;
+  border-radius: 10px;
 }
-
-.auth-wrapper .form-control:focus {
-  border-color: #167bff;
-  box-shadow: none;
+.txt{
+  margin: 10px 50px;
 }
-
-.auth-wrapper h3 {
-  text-align: center;
-  margin: 0;
-  line-height: 1;
-  padding-bottom: 20px;
-}
-
-.custom-control-label {
-  font-weight: 400;
-}
-
-.forgot-password,
-.forgot-password a {
-  text-align: right;
-  font-size: 13px;
-  padding-top: 10px;
-  color: #7f7d7d;
-  margin: 0;
-}
-
-.forgot-password a {
-  color: #167bff;
-}
-
-table,
-th,
-td {
-  border: 1px solid black !important;
+.txt:hover{
+  color:#3F72AF;
 }
