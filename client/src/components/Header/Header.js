@@ -10,7 +10,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../../images/logo2.png'
 import './Header.css'
 
 const pages = [{page:'Home', path:''}, {page:'About Us', path:'about'},{page: 'Services', path:'services'},  {page:'Contant Us',path:'contact'},];
@@ -27,7 +26,7 @@ export default function Header() {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#fff', paddingTop:'3px', paddingBottom:'6px',boxShadow: '0px 0px 0px 0px #bfbfbf', color: '#000' }}>
+   location.pathname !== '/Mobiliser_Home' && ( <AppBar position="sticky" sx={{ backgroundColor: '#fff', paddingTop:'3px', paddingBottom:'6px',boxShadow: '0px 0px 0px 0px #bfbfbf', color: '#000' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography>
@@ -106,5 +105,6 @@ export default function Header() {
       </Container>
     </AppBar>
 
-  );
-}
+  )
+)
+                }

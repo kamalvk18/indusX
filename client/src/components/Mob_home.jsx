@@ -106,13 +106,11 @@ const Mob_home = () => {
    
     <div className="app-container">
       <nav className="navvbar">
-        <div className="company-logo">Company Logo</div>
+        <img src='https://sgrsgroup.com/wp-content/uploads/2023/06/1200x300px.png' className='logo-sm'/>
         <div className="navvbar-buttons">
         <button className="new-registration-button" onClick={handleNavigateToRegister}>
             New Registration
-          </button>
-
-          
+          </button>    
           <div className="profile-icon" onClick={toggleProfileDropdown}>
             <FontAwesomeIcon icon={faUser} /> 
           </div>
