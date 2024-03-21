@@ -11,12 +11,11 @@ export default function SignUp() {
   const [secretKey, setSecretKey] = useState("");
 
   const handleSubmit = (e) => {                        //when user submits this send request to local hoste:5000/register
-    if (userType == "Admin" && secretKey != "SGRS") {
+    if (userType === "Admin" && secretKey !== "SGRS") {
       e.preventDefault();
       alert("Invalid Admin");
     } else {
       e.preventDefault();
-
       console.log(fname, lname, email, password);
       fetch("http://localhost:5000/register", {        //POST the request
         method: "POST",
@@ -54,7 +53,6 @@ export default function SignUp() {
             <img src="https://firebasestorage.googleapis.com/v0/b/edutech-f8171.appspot.com/o/images%2Fimg-01.png?alt=media&token=70eb254d-c7e4-4cb2-9504-8d7b3fd3af63" alt="IMG" />
           </div>
         <form onSubmit={handleSubmit} className="login100-form">
-          {/* <h3>Sign Up</h3> */}
           <span className="login100-form-title">Sign Up</span>
           <div>
             <h4 className="reg">Register As</h4>
@@ -80,9 +78,6 @@ export default function SignUp() {
             />
             </div>
             </div>
-            
-            
-            
           </div>
           {userType == "Admin" ? (
             <div className="mb-3">

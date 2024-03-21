@@ -27,7 +27,7 @@ export default function Header() {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#fff', paddingTop:'3px', paddingBottom:'6px',boxShadow: '0px 1px 5px 0px #bfbfbf', color: '#000' }}>
+    <AppBar position="sticky" sx={{ backgroundColor: '#fff', paddingTop:'3px', paddingBottom:'6px',boxShadow: '0px 0px 0px 0px #bfbfbf', color: '#000' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography>
