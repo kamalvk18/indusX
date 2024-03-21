@@ -12,7 +12,6 @@ const Employee = require('./models/Employee')
 const Approved = require('./models/Approved');
 const Camp= require('./models/Camp')
 const Payment = require('./models/Payment');
-const User = require("./models/Employee");
 
 
 //for token , anykey
@@ -37,12 +36,22 @@ mongoose
   //creating a register api through which we can register a user
   app.post('/register', async (req, res) => {
     try {
-      const newEmployee = new Employee(req.body);
-      const savedEmployee = await newEmployee.save();
-      res.status(201).json(savedEmployee);
+        const { password, ...userData } = req.body;
+
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
+        console.log(hashedPassword)
+
+        const newEmployee = new Employee({
+            ...userData,
+            password: hashedPassword
+        });
+        const savedEmployee = await newEmployee.save();
+        res.status(201).json(savedEmployee);
     } catch (error) {
-      console.error('Error during registration:', error);
-      res.status(500).json({ message: 'Internal Server Error', error: error.message });
+        // Handle errors
+        console.error('Error during registration:', error);
+        res.status(500).json({ message: 'Internal Server Error', error: error.message });
     }
   });
 
@@ -50,10 +59,11 @@ mongoose
   app.post("/login-user", async (req, res) => {
     const { email, password } = req.body;
   
-    const user = await User.findOne({ email });       //Finding User by Email
+    const user = await Employee.findOne({ email });       //Finding User by Email
     if (!user) {
       return res.json({ error: "User Not found" });
     }
+    
     if (await bcrypt.compare(password, user.password)) {       // decrypt the passowrd first and then compare the passwords
       const token = jwt.sign({ email: user.email }, JWT_SECRET, {   // after comaprison generates a token
         expiresIn: "30m",
@@ -67,8 +77,6 @@ mongoose
     }
     res.json({ status: "error", error: "InvAlid Password" });
   });
-
-
 
   app.post("/userData", async (req, res) => {
     const { token } = req.body;
@@ -85,7 +93,7 @@ mongoose
       }
   
       const useremail = user.email;
-      User.findOne({ email: useremail })
+      Employee.findOne({ email: useremail })
         .then((data) => {
           res.send({ status: "ok", data: data });
         })
