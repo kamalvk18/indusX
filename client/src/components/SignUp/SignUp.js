@@ -1,22 +1,19 @@
 import React, { Component, useState } from "react";
-import "./css/main.css"
-import "./CSSFiles/signup_component.css"
+import "../../components/css/main.css"
+import "./SignUp.css"
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
+  const navigate = useNavigate()
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("");
+  const [userType, setUserType] = useState("Admin");
   const [secretKey, setSecretKey] = useState("");
 
-  const handleSubmit = (e) => {                        //when user submits this send request to local hoste:5000/register
-    if (userType == "Admin" && secretKey != "SGRS") {
+  const handleSubmit = (e) => {    
       e.preventDefault();
-      alert("Invalid Admin");
-    } else {
-      e.preventDefault();
-
       console.log(fname, lname, email, password);
       fetch("http://localhost:5000/register", {        //POST the request
         method: "POST",
@@ -37,23 +34,21 @@ export default function SignUp() {
         .then((res) => {
           if (res.ok) {                  //if gets server side ok then alert regsitration successful
             alert("Registration Successful");
+            navigate('/Mobiliser_Home')
           } else {
             alert("Something went wrong");
           }
         })
     }
-  };
-
+  
   return (
-    <div>
-    <div className="auth-wrapper container-login100">
-      <div className="auth-inner wrap-login100">
+    <div className="container-login100">
+      <div className="signup-card">
       <div className="login100-pic js-tilt" data-tilt>
             <img src="https://firebasestorage.googleapis.com/v0/b/edutech-f8171.appspot.com/o/images%2Fimg-01.png?alt=media&token=70eb254d-c7e4-4cb2-9504-8d7b3fd3af63" alt="IMG" />
           </div>
         <form onSubmit={handleSubmit} className="login100-form">
-          {/* <h3>Sign Up</h3> */}
-          <span className="login100-form-title">Sign Up</span>
+          <h3 className="login100-form-title">Sign Up</h3>
           <div>
             <h4 className="reg">Register As</h4>
             <div className="user user-box">
@@ -74,15 +69,13 @@ export default function SignUp() {
               type="radio"
               name="UserType"
               value="Admin"
+              checked
               onChange={(e) => setUserType(e.target.value)}
             />
             </div>
             </div>
-            
-            
-            
           </div>
-          {userType == "Admin" ? (
+          {/* {userType == "Admin" ? (
             <div className="mb-3">
               <label>Secret Key</label>
               <input
@@ -92,7 +85,7 @@ export default function SignUp() {
                 onChange={(e) => setSecretKey(e.target.value)}
               />
             </div>
-          ) : null}
+          ) : null} */}
 
           <div className="mb-3 wrap-input100">
             <input
@@ -157,7 +150,6 @@ export default function SignUp() {
           </p>
         </form>
       </div>
-    </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
-import SignUp from "./components/signup_component";
+import SignUp from "./components/SignUp/SignUp";
 import UserDetails from "./components/userDetails";
 import AdminHome from "./components/candidate_view";
 import JustViewCandidate from "./components/just_view_cand";
