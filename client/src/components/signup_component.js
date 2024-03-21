@@ -34,15 +34,13 @@ export default function SignUp() {
           userType,
         }),
       })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data, "userRegister");
-          if (data.status == "ok") {                  //if gets server side ok then alert regsitration successful
+        .then((res) => {
+          if (res.ok) {                  //if gets server side ok then alert regsitration successful
             alert("Registration Successful");
           } else {
             alert("Something went wrong");
           }
-        });
+        })
     }
   };
 

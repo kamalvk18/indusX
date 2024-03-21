@@ -7,11 +7,12 @@ app.use(cors());
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
-const UserModel = require('./models/Employee');
+const Candidate = require('./models/Candidate');
+const Employee = require('./models/Employee')
 const Approved = require('./models/Approved');
 const Camp= require('./models/Camp')
 const Payment = require('./models/Payment');
-const User = require("./models/userDetails");
+const User = require("./models/Employee");
 
 
 //for token , anykey
@@ -36,9 +37,9 @@ mongoose
   //creating a register api through which we can register a user
   app.post('/register', async (req, res) => {
     try {
-      const newUser = new UserModel(req.body);
-      const savedUser = await newUser.save();
-      res.status(201).json(savedUser);
+      const newEmployee = new Employee(req.body);
+      const savedEmployee = await newEmployee.save();
+      res.status(201).json(savedEmployee);
     } catch (error) {
       console.error('Error during registration:', error);
       res.status(500).json({ message: 'Internal Server Error', error: error.message });
@@ -98,7 +99,7 @@ mongoose
   app.get('/students', async (req, res) => {
     try {
       
-      const students = await UserModel.find({});
+      const students = await Candidate.find({});
      
         res.json(students);
     } catch (error) {
@@ -115,7 +116,7 @@ mongoose
   
     try {
       // Implement logic to update the candidate data in the database
-      await UserModel.findByIdAndUpdate(userId, updatedData);
+      await Candidate.findByIdAndUpdate(userId, updatedData);
       return res.json({ status: "ok", data: 'Candidate updated successfully' });
     } catch (error) {
       console.error(error);
@@ -126,7 +127,7 @@ mongoose
   app.post("/deleteUser", async (req, res) => {
     const { userid } = req.body;
     try {
-      await UserModel.deleteOne({ _id: userid });
+      await Candidate.deleteOne({ _id: userid });
       res.send({ status: "Ok", data: "Deleted" });
     } catch (error) {
       console.log(error);
