@@ -48,25 +48,11 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className="top-section">
-        <div className="text-content">
-          <h1>Welcome to Savy-Skills</h1>
-          
-          <h2>where education meets innovation! We're on a mission to revolutionize learning experiences...</h2>
-          <button className="explore-button">Explore Courses</button>
-        </div>
-        <div className="image-content">
-          <img src={rightImage} alt="Educational" /> {/* Image added here */}
-        </div>
-      </div>
       <div className="slider-container">
         <Slider {...settings}>
-          <div><img src={img1} alt="Slide 1" className="slider-image"/></div>
-          <div><img src={img2} alt="Slide 2" className="slider-image"/></div>
-          <div><img src={img3} alt="Slide 2" className="slider-image"/></div>
-          <div><img src={img4} alt="Slide 2" className="slider-image"/></div>
-          <div><img src={img5} alt="Slide 2" className="slider-image"/></div>
+          <div><img src='https://sgrsgroup.com/wp-content/uploads/2023/04/lalganj-centre.png' alt="Slide 1" className="slider-image"/></div>
         </Slider>
+        <h1 className='home-heading'>Welcome to SGRS</h1>
       </div>
     </div>
   );

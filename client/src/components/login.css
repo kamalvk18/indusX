@@ -6,6 +6,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #F9F7F7;
+  height: 550px;
+  
 }
 .login-box{
   display: flex;
@@ -13,7 +16,7 @@
   flex-direction: column;
   width: 485px;
   border-radius: 33px;
-  background-color: #DBE2EF !important;
+  background-color: #FFFFFF;
   padding: 10px;
   margin: 30px 0;
 }
