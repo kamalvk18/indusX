@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,13 +11,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { Link, useLocation } from 'react-router-dom';
-import './Header.css'
+import './Navbar.css'
 
 const pages = [{page:'Home', path:''}, {page:'About Us', path:'about'},{page: 'Services', path:'services'},  {page:'Contant Us',path:'contact'},];
 
-export default function Header() {
+export default function Navbar() {
   const location = useLocation();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+ 
+
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -26,7 +30,7 @@ export default function Header() {
   };
 
   return (
-   location.pathname !== '/Mobiliser_Home' && ( <AppBar position="sticky" sx={{ backgroundColor: '#fff', paddingTop:'3px', paddingBottom:'6px',boxShadow: '0px 0px 0px 0px #bfbfbf', color: '#000' }}>
+   location.pathname != '/Mobiliser_Home' && ( <AppBar position="sticky" sx={{ backgroundColor: '#fff', paddingTop:'3px', paddingBottom:'6px',boxShadow: '0px 0px 0px 0px #bfbfbf', color: '#000' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography>
@@ -74,7 +78,7 @@ export default function Header() {
           <Typography sx={{flexGrow: 1, }} >
             <img src='https://sgrsgroup.com/wp-content/uploads/2023/06/1200x300px.png' className='logo-image'/>
           </Typography>
-        
+        { location.pathname !== '/login-user' && 
           <Box sx={{ flexGrow: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: 'auto' }}>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems:'center ' }}>
               {pages.map((page, index) => (
@@ -97,10 +101,11 @@ export default function Header() {
               ))}
               <Button component={Link} to = '/login-user' variant='contained' size='small' sx={{fontFamily:'Roboto',textTransform:'initial'}}
               >
-                Sign In
+                Login
               </Button>
             </Box>
           </Box>
+          }
         </Toolbar>
       </Container>
     </AppBar>

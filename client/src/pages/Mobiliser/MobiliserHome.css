@@ -1,0 +1,224 @@
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+     
+  }
+.image-container{
+  width: 280px;
+  background-color: #DBE2EF;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.company-logo{
+  width: 70%;
+  margin-left: 30px;
+}
+
+.icons-container{
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+  .sidebar {
+    width: 280px;
+    background-color: #DBE2EF;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: '2px solid red'
+
+  }
+  
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+
+  }
+  
+  .sidebar ul li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    border-top: 1px solid #ffffff;
+  }
+  
+  .sidebar ul li a {
+    display: flex;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+    
+    
+
+  }
+  /* .sidebar ul li:hover {
+    transform: scale(1.1);
+    color: #333;
+  } */
+.sidebar ul li p{
+  font-size: 16px;
+  margin-left: 8px;
+}
+  .main-content {
+    flex-grow: 1;
+    background-color: #F9F7F7;
+  }
+  
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .content-area {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+    }
+  
+    .main-content {
+      width: 100%;
+    }
+  }
+  
+  
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+
+.box-wrapper{
+   margin-top: 20px;
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+ 
+}
+.box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .box {
+    background-color: #DBE2EF;
+    border-radius: 9px;
+    text-align: center;
+    margin-top: 20px;
+    width: 220px;
+    padding-top: 18px;
+    padding-bottom: 12px;
+  }
+  
+  .box-title {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+.bars-container{
+  width: 65%;
+  padding-top: 30px;
+}
+
+  /* CSS for the table */
+.table-container {
+    margin-top: 50px;
+  }
+  
+  .custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Apply styles to the table, th, and td within the custom-table class */
+.custom-table, .custom-table th, .custom-table td {
+  border: 1px solid #ddd;
+}
+
+/* Apply styles to th and td within the custom-table class */
+.custom-table th, .custom-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Apply styles to thead within the custom-table class */
+.custom-table thead {
+  background-color: rgb(28, 187, 180);
+  color: white;
+}
+
+/* Apply styles to even rows within tbody of the custom-table class */
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Apply styles to rows on hover within tbody of the custom-table class */
+.custom-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Optional: Style for table header cells within the custom-table class */
+.custom-table th {
+  font-weight: bold;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding-right: 30px;
+  }
+  .content-wrapper {
+    display: flex;
+    flex: 1; /* Allow the main content to grow and take available space */
+  }
+  
+  .profile-dropdown {
+    position: absolute;
+    top: 60px; /* Adjusted for increased navbar height */
+    right: 30px; /* Aligned with the right padding of the navbar */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+  }
+  
+  .profile-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .profile-dropdown ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #333; /* Text color for dropdown items */
+  }
+  
+  .profile-dropdown ul li:hover {
+    background-color: #f2f2f2; /* Background color on hover */
+  }

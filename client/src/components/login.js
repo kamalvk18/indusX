@@ -38,10 +38,6 @@ export default function Login() {
       });
   }
 
-
-
-
-  ///////////////////////////////////////////////////////////////////////////
   return (
         <div className="login-container">
           <form className="login-box" onSubmit={handleSubmit}>

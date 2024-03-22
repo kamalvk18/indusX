@@ -3,12 +3,12 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
-import SignUp from "./components/SignUp/SignUp";
+import SignUp from "./pages/SignUp/SignUp";
 import UserDetails from "./components/userDetails";
 import AdminHome from "./components/candidate_view";
 import JustViewCandidate from "./components/just_view_cand";
 import CandidateUpdate from "./components/update_cand";
-import Mob_home from "./components/Mob_home";
+import MobiliserHome from "./pages/Mobiliser/MobiliserHome";
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -26,7 +26,7 @@ import View from "./components/View";
 import HandleEvent from "./components/HandleEvent";
 import CreatePayment from "./components/CreatePayment";
 import ManagePayment from './components/ManagePayment';
-import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
 import Footer from './components/Footer/Footer'
 
 
@@ -36,7 +36,7 @@ function App() {
     
     <Router>
       <div className="App">
-      <Header />  
+      <Navbar />  
         <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About />} />
@@ -54,7 +54,7 @@ function App() {
           <Route path ="/Home" element={<AdminHome/>}/>
           <Route path ="/candidate-update" element={<CandidateUpdate/>}/>
            
-          <Route path ="/Mobiliser_Home" element={<Mob_home/>}/> 
+          <Route path ="/Mobiliser_Home" element={<MobiliserHome/>}/> 
           <Route path ="/students" element ={<AdminHome/>}/>
           <Route path ="/register" element={<RegistrationForm/>}/>
           <Route path='/create' element={<Create/>}/>
