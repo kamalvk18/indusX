@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './MobiliserHome.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -19,15 +19,14 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 
-
 const MobiliserHome = () => {
   const [name, setName] = useState('Rahul');
- 
   const [profileDropdownVisible, setProfileDropdownVisible] = useState(false);;
   const [manageCamp, setManageCamp] = useState(false)
   const [manageCandidate, setManageCandidate] = useState(false)
   const [candidates, setCandidates] = useState([]);
   const [Tcandidates, setTCandidates] = useState([]);
+  const [selctedPath, setSelectedPath] = useState('dashboard')
   const navigate = useNavigate();
   const getRecentlyRegisteredStudents = (events) => {
     // Convert the registrationDate strings to Date objects
@@ -74,7 +73,11 @@ const MobiliserHome = () => {
     navigate('/register'); // Replace '/register' with the path to your RegistrationForm component
   };
 
-
+  const handleLeftNavPaths= (path) => {
+    setSelectedPath(path)
+    if(path === 'payments'){
+    }
+  }
 
   return (
     <div className="app-container">
@@ -100,7 +103,7 @@ const MobiliserHome = () => {
       <div className="content-wrapper">
         <div className="sidebar">
           <ul className='sidebar-list-container'>
-            <li>
+            <li className={selctedPath ==='dashboard' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('dashboard')}>
                 <GridViewIcon />
                 <p>Dashboard</p>
             </li>
@@ -112,11 +115,12 @@ const MobiliserHome = () => {
             </li>
             {manageCamp &&
               <>
-              <li onClick={() => navigate("")}>
+              <li className={selctedPath ==='createCamp' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('createCamp')}>
                 <NoteAddIcon/>
                 <p>Create Camp</p>
               
-            </li> <li onClick={() => navigate("")}>
+            </li>
+             <li className={selctedPath ==='campList' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('campList')}>
                 <ListIcon/>
                 <p>Camp List</p>
               
@@ -130,18 +134,18 @@ const MobiliserHome = () => {
           </li>
           {manageCandidate &&
               <>
-              <li onClick={() => navigate("/students")}>
+              <li className={selctedPath ==='register' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('register')}>
                 <GroupAddIcon/>
                 <p>Register</p>
               
-            </li> <li onClick={() => navigate("")}>
+            </li> <li className={selctedPath ==='candidateList' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('candidateList')}>
                 <FormatListNumberedIcon/>
                 <p>Candidate List</p>
               
             </li>
             </>
             }
-            <li  onClick={() => navigate("/managep")}>
+            <li   className={selctedPath ==='payments' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('payments')}>
                 <PaymentIcon />
                 <p>Payments</p>
             </li>
