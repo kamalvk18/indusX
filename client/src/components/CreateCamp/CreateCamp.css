@@ -1,0 +1,55 @@
+
+
+
+.cc-main-container{
+    font-family: "inter";
+    background-color:  #F9F7F7;
+    flex-grow: 1;
+
+}
+.cc-heading{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32.4px;
+    margin-left: 72px;
+    margin-top: 16px;
+}
+.inputs-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap:'30px';
+    margin-top: 10px;
+}
+.textField{
+    margin-top: 30px;
+    width: 50%;
+    background-color: #FFFFFF;
+}
+
+.date-time-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 50%;
+}
+.textField2{
+    width: 48%;
+    background-color: #FFFFFF;
+}
+.submit-btn{
+    width: 30%;
+    height: 48px;
+    padding: '4px, 16px, 4px, 16px' !important;
+    font-family: 'IBM Plex Sans' !important;
+    font-size: 20px !important;
+    line-height: '27.3px' !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    background-color: #112D4E !important;
+    color: #FFFFFF;
+    border-radius: 6px;
+    
+}
