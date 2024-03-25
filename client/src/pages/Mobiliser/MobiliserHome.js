@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import MobiliserDashboard from '../../components/MobiliserDashboard/MobiliserDashboard';
+import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './MobiliserHome.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -12,12 +13,13 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import BasicBars from '../../components/BasicBar/BasicBar';
 import ListIcon from '@mui/icons-material/List';
 import NoteAddIcon from '@mui/icons-material/NoteAdd';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
+import CreateCamp from '../../components/CreateCamp/CreateCamp';
+
 
 const MobiliserHome = () => {
   const [name, setName] = useState('Rahul');
@@ -76,6 +78,15 @@ const MobiliserHome = () => {
   const handleLeftNavPaths= (path) => {
     setSelectedPath(path)
     if(path === 'payments'){
+    }
+  }
+  
+  const handleTabChange = () => {
+    if(selctedPath==='createCamp'){
+      return <CreateCamp/>
+    }
+    else if(selctedPath === 'dashboard'){
+      return <MobiliserDashboard name={name}/>
     }
   }
 
@@ -162,38 +173,7 @@ const MobiliserHome = () => {
             </li>
             </ul>
         </div>
-        <div className="main-content">
-          <h3 className="title">{`Hello ${name} (Mobiliser)`}</h3>
-          <div className='box-wrapper'>
-            <div className="box-container">
-            <div className="box">
-              <div className="box-title">Total Registered</div>
-              <div className="box-number">100</div>
-            </div>
-            <div className="box">
-              <div className="box-title">Total Moved</div>
-              <div className="box-number">10</div>
-            </div>
-            <div className="box">
-              <div className="box-title">Total Under</div>
-              <div className="box-number">70</div>
-            </div>
-            <div className="box">
-              <div className="box-title">Total Selected</div>
-              <div className="box-number">18</div>
-            </div>
-            <div className="box">
-              <div className="box-title">Total Rejected</div>
-              <div className="box-number">2</div>
-            </div>
-            </div>
-            <div className='bars-container'>
-              <BasicBars  xtext='Date'/>
-              <BasicBars xtext='Camp Name'/>
-            </div>
-            
-          </div>
-        </div>
+        {handleTabChange()}
       </div>
     </div>
   );
