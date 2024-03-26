@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import EditIcon from '@mui/icons-material/Edit';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { makeStyles } from '@material-ui/core/styles';
-import '../components/Register/CandidateList.css';
+import '../../components/CandidateList/CandidateList.css';
 
 const data = [
   { id: 1, name: 'John Doe', candidateId: '001', mobileNo: '1234567890', fathersNmae: 'John Doe', status: 'Pending' },

@@ -22,8 +22,8 @@ import CreateCamp from '../../components/CreateCamp/CreateCamp';
 import { selectClasses } from '@mui/material';
 import Register from '../../components/Register/Register';
 import CampList from '../../components/CreateCamp/CampList';
-import CandidateList from '../../components/Register/CandidateList';
-import MobiliserPayments from '../../components/MobiliserPayments';
+import CandidateList from '../../components/CandidateList/CandidateList';
+import MobiliserPayments from '../../components/Payments/MobiliserPayments';
 
 
 const MobiliserHome = () => {
@@ -82,8 +82,6 @@ const MobiliserHome = () => {
 
   const handleLeftNavPaths= (path) => {
     setSelectedPath(path)
-    if(path === 'payments'){
-    }
   }
   
   const handleTabChange = () => {

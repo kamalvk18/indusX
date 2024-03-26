@@ -1,5 +1,4 @@
 import React from "react";
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
@@ -19,13 +18,9 @@ import "slick-carousel/slick/slick-theme.css";
 import RegistrationForm from "./components/cand_reg";
 
 import Create from './components/Create';
-import Layout from './components/Layout';
-import Manage from "./components/Manage";
-
 import View from "./components/View";
 import HandleEvent from "./components/HandleEvent";
 import CreatePayment from "./components/CreatePayment";
-import ManagePayment from './components/ManagePayment';
 import Navbar from "./components/Navbar/Navbar";
 import Footer from './components/Footer/Footer'
 
@@ -58,17 +53,11 @@ function App() {
           <Route path ="/students" element ={<AdminHome/>}/>
           <Route path ="/register" element={<RegistrationForm/>}/>
           <Route path='/create' element={<Create/>}/>
-          <Route path ='/manage' element ={<Manage/>}/>
-          <Route path ='/camp' element ={<Layout/>} />
           <Route path ='/view' element ={<View/>} />
           <Route path ='/edit' element ={<HandleEvent/>}/>
           <Route path ='/payment' element={<CreatePayment/>}/>
-          <Route path ='/managep' element={<ManagePayment/>}/>
-
-          
 
         </Routes>
-        {/* <ImageUpload/> */}
         <Footer />
       </div>
     </Router>
