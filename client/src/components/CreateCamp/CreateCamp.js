@@ -10,9 +10,8 @@ export default function CreateCamp() {
     <div className='cc-main-container'>
       <h3 className='cc-heading'>Basic Details</h3>
       <Box className='inputs-container' sx={{gap:'20px'}}>
-        <CustomTextField label='Name'/>
-        <CustomTextField label='Sponsored'/>
-        <CustomTextField label='Agency'/>
+        <CustomTextField label='Scheme Name'/>
+        <CustomTextField label='Sponsored Agency'/>
         <CustomTextField label='Event Title'/>
           <Box className='date-time-container'>
           <TextField
