@@ -4,7 +4,7 @@ import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye , faEdit ,faCheck, faTimes} from '@fortawesome/free-solid-svg-icons';
-import './CSSFiles/CampTable.css'; // Import the CSS file
+import './CampTable.css'; // Import the CSS file
 import axios from 'axios';
 import './CSSFiles/iconStyle.css'
 const CampTable = ({ events,setNo,no}) => {
