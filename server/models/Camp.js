@@ -1,16 +1,29 @@
 const mongoose = require('mongoose');
 const campSchema = new mongoose.Schema({
-    schemeName: String,
-    sponsoredAgency: String,
+    name: String,
+    sponsored: String,
+    agency: String,
     eventTitle: String,
-    dateTime: String,
-    venue: String,
+    date: Date,
+    time: String,
+    address: String,
+    district: String,
+    block: Number,
+    panchayat: String,
+    landmark: String,
+    guestName: String,
     guestDetails: String,
-    action: {
-      type: Boolean,
-      default: false,
-    },
-  });
-const Camp = mongoose.model('Camp', campSchema);  
+});
 
+campSchema.pre('save', function(next) {
+  if (this.date && typeof(this.date) === 'string') {
+    // Convert the date string to a Date object (assuming the format is dd-mm-yyyy)
+    this.date = new Date(
+      this.date.split('-').reverse().join('-')
+    );
+  }
+  next();
+});
+
+const Camp = mongoose.model('Camp', campSchema);
 module.exports = Camp;
