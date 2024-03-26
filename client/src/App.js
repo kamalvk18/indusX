@@ -7,7 +7,7 @@ import UserDetails from "./components/userDetails";
 import AdminHome from "./components/candidate_view";
 import JustViewCandidate from "./components/just_view_cand";
 import CandidateUpdate from "./components/update_cand";
-import MobiliserHome from "./pages/Mobiliser/MobiliserHome";
+import MobiliserHome from "./pages/MobiliserHome/MobiliserHome";
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';

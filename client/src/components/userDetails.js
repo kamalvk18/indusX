@@ -3,7 +3,7 @@ import AdminHome from "./candidate_view";
 
 import UserHome from "./userHome";
 
-import MobiliserHomme from "../pages/Mobiliser/MobiliserHome";
+import MobiliserHome from "../pages/MobiliserHome/MobiliserHome";
 
 
 export default function UserDetails() {
@@ -40,5 +40,5 @@ export default function UserDetails() {
       });
   }, []);
  
-  return admin ? <MobiliserHomme/> : <UserHome userData={userData} />;
+  return admin ? <MobiliserHome/> : <UserHome userData={userData} />;
 }
