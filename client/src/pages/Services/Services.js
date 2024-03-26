@@ -1,6 +1,6 @@
 import React from 'react';
 import './Services.css';
-import serviceImage from '../images/img9.jpg'; // Import the image for services
+import serviceImage from '../../images/img9.jpg'; // Import the image for services
 
 const Services = () => (
   <div className="services-container">

@@ -4,14 +4,15 @@ import Autocomplete from '@mui/material/Autocomplete';
 import './AutoComplete.css'
 
 export default function AutoComplete(props) {
-  const {label} = props
+  const {label,styles } = props
   return (
     <Autocomplete
      className='autocomplete'
       disablePortal
       id="combo-box-demo"
+      style={styles}
       options={top100Films}
-      sx={{ width: '48%', '& .MuiOutlinedInput-root':{padding:'0'}}}
+      sx={{ '& .MuiOutlinedInput-root':{padding:'0'}}}
       renderInput={(params) => 
       <TextField 
       label={label}
