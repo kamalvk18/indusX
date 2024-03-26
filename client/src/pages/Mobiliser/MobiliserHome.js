@@ -82,12 +82,14 @@ const MobiliserHome = () => {
   }
   
   const handleTabChange = () => {
-    if(selctedPath==='createCamp'){
-      return <CreateCamp/>
-    }
-    else if(selctedPath === 'dashboard'){
+    if(selctedPath === 'dashboard'){
       return <MobiliserDashboard name={name}/>
     }
+    else if(selctedPath==='createCamp'){
+      return <CreateCamp/>
+    }
+    ///add your condition here...
+    
   }
 
   return (
