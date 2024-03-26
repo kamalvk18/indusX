@@ -21,6 +21,9 @@ import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import CreateCamp from '../../components/CreateCamp/CreateCamp';
 import { selectClasses } from '@mui/material';
 import Register from '../../components/Register/Register';
+import CampList from '../../components/CreateCamp/CampList';
+import CandidateList from '../../components/Register/CandidateList';
+import MobiliserPayments from '../../components/MobiliserPayments';
 
 
 const MobiliserHome = () => {
@@ -87,11 +90,17 @@ const MobiliserHome = () => {
     if(selectedPath === 'dashboard'){
       return <MobiliserDashboard name={name}/>
     }
-    else if(selectedPath==='createCamp'){
+     else if(selectedPath==='createCamp'){
       return <CreateCamp/>
     }
+    else if(selectedPath ==='campList')
+       return <CampList/>
     else if(selectedPath ==='register')
        return <Register/>
+    else if(selectedPath ==='candidateList')
+       return <CandidateList/>
+    else if(selectedPath ==='payments')
+       return <MobiliserPayments/>
     ///add your condition here...
     
   }

@@ -15,7 +15,7 @@ export default function Register() {
             <CustomTextField label='Eductation Level'/>
                 <Box className='date-time-container'>
                     <TextField
-                    label="BOD"
+                    label="DOB"
                     id="filled"
                     size="small"
                     type='date'
@@ -48,7 +48,7 @@ export default function Register() {
                     label="Age"
                     id="filled"
                     size="small"
-                    placeholder='Calculate Age from BOD'
+                    placeholder='Calculate Age from DOB'
                     InputLabelProps={{
                     sx: { bgcolor: "#DBE2EF", borderRadius:'5px', fontSize:'15px', lineHeight:'20.25px', padding:'2px 8px 2px 8px', color:'#000'},
                     }}
