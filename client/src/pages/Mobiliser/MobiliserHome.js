@@ -23,6 +23,7 @@ import { selectClasses } from '@mui/material';
 import Register from '../../components/Register/Register';
 import CampList from '../../components/CreateCamp/CampList';
 import CandidateList from '../../components/Register/CandidateList';
+import MobiliserPayments from '../../components/MobiliserPayments';
 
 
 const MobiliserHome = () => {
@@ -98,6 +99,8 @@ const MobiliserHome = () => {
        return <Register/>
     else if(selectedPath ==='candidateList')
        return <CandidateList/>
+    else if(selectedPath ==='payments')
+       return <MobiliserPayments/>
     ///add your condition here...
     
   }
