@@ -19,6 +19,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import CreateCamp from '../../components/CreateCamp/CreateCamp';
+import { selectClasses } from '@mui/material';
+import Register from '../../components/Register/Register';
 
 
 const MobiliserHome = () => {
@@ -28,7 +30,7 @@ const MobiliserHome = () => {
   const [manageCandidate, setManageCandidate] = useState(false)
   const [candidates, setCandidates] = useState([]);
   const [Tcandidates, setTCandidates] = useState([]);
-  const [selctedPath, setSelectedPath] = useState('dashboard')
+  const [selectedPath, setSelectedPath] = useState('dashboard')
   const navigate = useNavigate();
   const getRecentlyRegisteredStudents = (events) => {
     // Convert the registrationDate strings to Date objects
@@ -82,12 +84,14 @@ const MobiliserHome = () => {
   }
   
   const handleTabChange = () => {
-    if(selctedPath === 'dashboard'){
+    if(selectedPath === 'dashboard'){
       return <MobiliserDashboard name={name}/>
     }
-    else if(selctedPath==='createCamp'){
+    else if(selectedPath==='createCamp'){
       return <CreateCamp/>
     }
+    else if(selectedPath ==='register')
+       return <Register/>
     ///add your condition here...
     
   }
@@ -116,7 +120,7 @@ const MobiliserHome = () => {
       <div className="content-wrapper">
         <div className="sidebar">
           <ul className='sidebar-list-container'>
-            <li className={selctedPath ==='dashboard' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('dashboard')}>
+            <li className={selectedPath ==='dashboard' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('dashboard')}>
                 <GridViewIcon />
                 <p>Dashboard</p>
             </li>
@@ -128,12 +132,12 @@ const MobiliserHome = () => {
             </li>
             {manageCamp &&
               <>
-              <li className={selctedPath ==='createCamp' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('createCamp')}>
+              <li className={selectedPath ==='createCamp' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('createCamp')}>
                 <NoteAddIcon/>
                 <p>Create Camp</p>
               
             </li>
-             <li className={selctedPath ==='campList' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('campList')}>
+             <li className={selectedPath ==='campList' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('campList')}>
                 <ListIcon/>
                 <p>Camp List</p>
               
@@ -147,18 +151,18 @@ const MobiliserHome = () => {
           </li>
           {manageCandidate &&
               <>
-              <li className={selctedPath ==='register' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('register')}>
+              <li className={selectedPath ==='register' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('register')}>
                 <GroupAddIcon/>
                 <p>Register</p>
               
-            </li> <li className={selctedPath ==='candidateList' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('candidateList')}>
+            </li> <li className={selectedPath ==='candidateList' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('candidateList')}>
                 <FormatListNumberedIcon/>
                 <p>Candidate List</p>
               
             </li>
             </>
             }
-            <li   className={selctedPath ==='payments' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('payments')}>
+            <li   className={selectedPath ==='payments' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('payments')}>
                 <PaymentIcon />
                 <p>Payments</p>
             </li>

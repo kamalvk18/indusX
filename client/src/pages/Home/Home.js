@@ -1,12 +1,13 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './Home.css';
-import img1 from '../images/hq720.jpg';
-import img2 from '../images/123.jpg';
-import img3 from '../images/a.webp';
-import img4 from '../images/1x1.avif';
-import img5 from '../images/image1.jpg';
-import rightImage from '../images/abc.png';
+import img1 from '../../images/hq720.jpg';
+import img2 from '../../images/123.jpg';
+import img3 from '../../images/a.webp';
+import img4 from '../../images/1x1.avif';
+import img5 from '../../images/image1.jpg';
+import rightImage from '../../images/abc.png';
+
 // ... import other images similarly
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;

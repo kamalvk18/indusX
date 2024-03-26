@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './About.css';
-import img from '../images/img7.jpg';
+import img from '../../images/img7.jpg'
 
-import additionalImg from '../images/img8.webp'; // Import your new image
+import additionalImg from '../../images/img8.webp'; // Import your new image
 
 const About = () => (
   <div>

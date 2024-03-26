@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contact.css'; // Assuming similar CSS styling as Services.css
-import contactImage from '../images/img10.jpg'; // Import the image for contact
+import contactImage from '../../images/img10.jpg'; // Import the image for contact
 
 const Contact = () => (
   <div className="contact-container">
