@@ -137,9 +137,11 @@ export default function CreateCamp() {
         <CustomTextField  label='Address' multiline={true} name='address' value={formData.address} handleChange={handleChange}/>
           <Box className='date-time-container'>
            <Autocomplete label='District' name='district' value={formData.district}
-            onChange={(value) => handleAutocompleteChange('district', value)}/>
+              handleAutocompleteChange={handleAutocompleteChange}
+              
+            />
             <Autocomplete label='Block' name='block' value={formData.block}
-            onChange={(value) => handleAutocompleteChange('block', value)}/>
+              handleAutocompleteChange={handleAutocompleteChange}/>
            <TextField
           label="Panchayat"
           name='panchayat'
