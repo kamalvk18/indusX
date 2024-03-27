@@ -134,7 +134,7 @@ export default function CreateCamp() {
       </Box>
       <h3 className='cc-heading'>Venue</h3>
       <Box className='inputs-container' sx={{gap:'20px'}}>
-        <CustomTextField  label='Address' multiline={true} name='address' value={formData.address} onChange={handleChange}/>
+        <CustomTextField  label='Address' multiline={true} name='address' value={formData.address} handleChange={handleChange}/>
           <Box className='date-time-container'>
            <Autocomplete label='District' name='district' value={formData.district}
             onChange={(value) => handleAutocompleteChange('district', value)}/>
@@ -208,8 +208,8 @@ export default function CreateCamp() {
       </Box>
       <h3 className='cc-heading'>Guest</h3>
       <Box className='inputs-container' sx={{gap:'20px'}}>
-      <CustomTextField label='Name' name='guestName' value={formData.guestName} onChange={handleChange} />
-      <CustomTextField label='Details' name='guestDetails' value={formData.guestDetails} onChange={handleChange}/>
+      <CustomTextField label='Name' name='guestName' value={formData.guestName} handleChange={handleChange} />
+      <CustomTextField label='Details' name='guestDetails' value={formData.guestDetails} handleChange={handleChange}/>
       </Box>
       <Box sx={{width:'100%', marginTop:'34px', marginBottom:'54px',textAlign:'center'}}>
           <Button variant="contained" className='submit-btn' type='submit'>
