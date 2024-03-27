@@ -14,7 +14,7 @@ const Camp= require('./models/Camp')
 const Payment = require('./models/Payment');
 
 
-//for token , anykey
+//for token , any key
 const jwt = require("jsonwebtoken");
 var nodemailer = require("nodemailer");
 const JWT_SECRET = process.env.JWT_TOKEN;
@@ -58,14 +58,13 @@ mongoose
 
   app.post("/login-user", async (req, res) => {
     const { email, password } = req.body;
-  
     const user = await Employee.findOne({ email });       //Finding User by Email
     if (!user) {
       return res.json({ error: "User Not found" });
     }
     
-    if (await bcrypt.compare(password, user.password)) {       // decrypt the passowrd first and then compare the passwords
-      const token = jwt.sign({ email: user.email }, JWT_SECRET, {   // after comaprison generates a token
+    if (await bcrypt.compare(password, user.password)) {       // decrypt the password first and then compare the passwords
+      const token = jwt.sign({ email: user.email }, JWT_SECRET, {   // after comparison generates a token
         expiresIn: "30m",
       });
   
@@ -91,9 +90,9 @@ mongoose
       if (user == "token expired") {
         return res.send({ status: "error", data: "token expired" });
       }
-  
-      const useremail = user.email;
-      Employee.findOne({ email: useremail })
+
+      const userEmail = user.email;
+      Employee.findOne({ email: userEmail })
         .then((data) => {
           res.send({ status: "ok", data: data });
         })
@@ -103,15 +102,25 @@ mongoose
     } catch (error) { }
   });
 
+  app.post("/createCamp", async(req, res) => {
+    try{
+      const newCamp = new Camp(req.body)
+      const savedCamp = await newCamp.save()
+      res.status(201).json(savedCamp)
+    } catch {
+      console.error('Error creating Camp:', error);
+      res.status(500).json({ message: 'Internal Server Error', error: error.message });
+    }
+  })
+
 
   app.get('/students', async (req, res) => {
     try {
-      
+
       const students = await Candidate.find({});
-     
         res.json(students);
     } catch (error) {
-      
+
       console.error('Error fetching candidates:', error);
       res.status(500).json({ message: 'Internal Server Error' });
     }

@@ -23,9 +23,10 @@ export default function CreateCamp() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(formData)
     try {
       // Send formData to the backend using fetch or Axios
-      const response = await fetch('your-backend-endpoint', {
+      const response = await fetch('http://localhost:5000/createCamp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -48,9 +49,10 @@ export default function CreateCamp() {
   };
 
   const handleAutocompleteChange = (name, value) => {
+    console.log(value)
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
+      [name]: value.label,
     }));
   };
 
@@ -128,15 +130,15 @@ export default function CreateCamp() {
           }}
           focused
           />
-          </Box>         
+          </Box>
       </Box>
       <h3 className='cc-heading'>Venue</h3>
       <Box className='inputs-container' sx={{gap:'20px'}}>
         <CustomTextField  label='Address' multiline={true} name='address' value={formData.address} onChange={handleChange}/>
           <Box className='date-time-container'>
-           <Autocomplete label='District' name='district'value={formData.district} 
+           <Autocomplete label='District' name='district' value={formData.district}
             onChange={(value) => handleAutocompleteChange('district', value)}/>
-            <Autocomplete label='Block' name='block'value={formData.block}
+            <Autocomplete label='Block' name='block' value={formData.block}
             onChange={(value) => handleAutocompleteChange('block', value)}/>
            <TextField
           label="Panchayat"
@@ -214,8 +216,6 @@ export default function CreateCamp() {
             Submit
           </Button>
       </Box>
-      
     </form>
   )
 }
-

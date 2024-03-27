@@ -3,14 +3,16 @@ const campSchema = new mongoose.Schema({
     schemeName: String,
     sponsoredAgency: String,
     eventTitle: String,
-    dateTime: String,
-    venue: String,
+    date: Date,
+    time: String,
+    address: String,
+    district: String,
+    block: Number,
+    panchayat: String,
+    landmark: String,
+    guestName: String,
     guestDetails: String,
-    action: {
-      type: Boolean,
-      default: false,
-    },
-  });
-const Camp = mongoose.model('Camp', campSchema);  
+});
 
+const Camp = mongoose.model('Camp', campSchema);
 module.exports = Camp;

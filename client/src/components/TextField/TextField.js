@@ -2,10 +2,8 @@ import React from 'react'
 import { TextField } from '@mui/material'
 
 export default function CustomTextField(props) {
-    const {label, multiline=false} = props
   return (
     <TextField
-          label={label}
           id="filled"
           size="small"
           InputLabelProps={{
@@ -31,8 +29,8 @@ export default function CustomTextField(props) {
               },
             },
           }}
-          multiline={multiline}
           focused
+          {...props}
           />
   )
 }
