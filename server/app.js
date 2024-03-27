@@ -103,7 +103,14 @@ mongoose
   });
 
   app.post("/createCamp", async(req, res) => {
-    console.log(req.body)
+    try{
+      const newCamp = new Camp(req.body)
+      const savedCamp = await newCamp.save()
+      res.status(201).json(savedCamp)
+    } catch {
+      console.error('Error creating Camp:', error);
+      res.status(500).json({ message: 'Internal Server Error', error: error.message });
+    }
   })
 
 
