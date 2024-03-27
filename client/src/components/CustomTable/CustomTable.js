@@ -18,13 +18,11 @@ const useStyles = makeStyles({
   },
 });
 
-const tableHeaders = [
-  'Scheme name', 'Sponsored agency', 'Event title', 'Date', 'Venue', 'Guest', 'Status'
-]
+
 
 export default function CustomTable(props) {
     const classes = useStyles()
-    const {rows} = props
+    const {rows, tableHeaders} = props
   return (
     <TableContainer component={Paper} className={classes.tableContainer}>
       <Table sx={{ minWidth: 550 }} aria-label="simple table">
@@ -40,19 +38,21 @@ export default function CustomTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              sx={{ "&:last-child td, &:last-child th": { borderBottom:'none'}, height:'70px' }}
+        <TableRow
+              sx={{ "&:last-child td, &:last-child th": { borderBottom:'none',}, height:'70px' }}
             >
+          {rows.map((row) => (
+           
               <TableCell
                 component="th"
                 scope="row"
                 sx={{ borderWidth:'1px 1px 1px 1px', borderColor:'#5B5B5B',  borderRight: "1px solid #5B5B5B" }}
               >
-                Hii
+               (Empty)
               </TableCell>  
-            </TableRow>
+       
           ))}
+               </TableRow>
         </TableBody>
       </Table>
     </TableContainer>

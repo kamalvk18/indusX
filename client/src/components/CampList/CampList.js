@@ -9,12 +9,10 @@ import {
 } from '@material-ui/core';
 import './CampList.css'
 
-const rowData = [
-  {srNo: '', id:'', name:"", fatherName:'', action:'', status:''},
-  {srNo: '', id:'', name:"", fatherName:'', action:'', status:''},
-  {srNo: '', id:'', name:"", fatherName:'', action:'', status:''},
-  {srNo: '', id:'', name:"", fatherName:'', action:'', status:''},
+const tableHeaders = [
+  'Scheme name', 'Sponsored agency', 'Event title', 'Date', 'Venue', 'Guest', 'Status'
 ]
+const rowData =  ['Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty','Empty',]
 
 const useStyles = makeStyles(() => ({
   textField:{
@@ -33,7 +31,7 @@ export default function CampList() {
         className={classes.textField}
         variant='outlined'
         InputProps={{
-          style:{borderColor:'#707C8B', background:'#ffffff', borderRadius:'10px', height:'56px !important', border:'1px solid #707C8B'},
+          style:{borderColor:'#707C8B', background:'#ffffff', borderRadius:'10px', height:'46px', border:'1px solid #707C8B'},
           endAdornment: (
             <InputAdornment>
               <SearchIcon  size='small'/>
@@ -60,7 +58,7 @@ export default function CampList() {
 
         //onChange={handleSearchChange}
       />
-      <CustomTable rows={rowData}/>
+      <CustomTable rows={rowData} tableHeaders={tableHeaders}/>
     </div>
   )
 }

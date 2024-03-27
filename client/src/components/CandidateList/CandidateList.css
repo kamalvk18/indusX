@@ -1,21 +1,17 @@
-.candidate-list{
+.cl-main-container{
+  font-family: "inter";
+  background-color:  #F9F7F7;
+  flex-grow: 1;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  width: 85vw;
+  align-items: center;
+
 }
-.searchBox {
-    border-radius: 20px;
-    background-color: #FFFFFF;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .searchBox input {
-    border-radius: 20px;
-  }
-  
-  .table-container {
-    margin-top: 30px;
-  }
+.cl-heading{
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32.4px;
+  margin-left: 70px;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
