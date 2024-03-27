@@ -30,25 +30,26 @@ export default function Register() {
     anyQuery: '',
   });
 
-  const handleFormSubmit = async () => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formData)
     try {
       // Send formData to the backend using fetch or Axios
-      const response = await fetch('your-backend-endpoint', {
+      const response = await fetch('backend-api', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData)
       });
       // Handle response as needed
-      const data = await response.json();
-      console.log(data); 
+      console.log('Form submitted successfully', response);
     } catch (error) {
-      console.error('Error:', error); 
+      console.error('Error submitting form:', error);
     }
   };
 
-  const handleInputChange = (event) => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -81,10 +82,10 @@ export default function Register() {
     <div className='r-main-container'>
       <h3 className='r-heading'>Basic Details</h3>
       <Box className='r-inputs-container' sx={{ gap: '20px' }}>
-        <CustomTextField label='Name' name="name" value={formData.name} onChange={handleInputChange}/>
-        <CustomTextField label="Father's Name" name="fatherName" value={formData.fatherName} onChange={handleInputChange} />
-        <CustomTextField label="Mother's Name" name="motherName" value={formData.motherName} onChange={handleInputChange}/>
-        <CustomTextField label='Eductation Level' name="educationLevel" value={formData.educationLevel} onChange={handleInputChange} />
+        <CustomTextField label='Name' name="name" value={formData.name} handleChange={handleChange}/>
+        <CustomTextField label="Father's Name" name="fatherName" value={formData.fatherName} handleChange={handleChange} />
+        <CustomTextField label="Mother's Name" name="motherName" value={formData.motherName} handleChange={handleChange}/>
+        <CustomTextField label='Eductation Level' name="educationLevel" value={formData.educationLevel} handleChange={handleChange} />
         <Box className='date-time-container'>
           <TextField
             label="DOB"
@@ -152,8 +153,9 @@ export default function Register() {
             focused
           />
         </Box>
-        <CustomTextField label='Mobile No.' value={formData.mobileNo} onChange={handleInputChange}/>
-        <CustomTextField label='Aadhar No.' value={formData.aadharNo} onChange={handleInputChange}/>
+        <CustomTextField label='Mobile No.' type="tel"
+        maxLength="10" name='mobileNo' value={formData.mobileNo} handleChange={handleChange}/>
+        <CustomTextField label='Aadhar No.' type='number' name='aadharNo' value={formData.aadharNo} handleChange={handleChange}/>
       </Box>
       <h3 className='r-heading'>Address</h3>
       <Box className='r-inputs-container' sx={{ gap: '20px' }}>
@@ -161,7 +163,7 @@ export default function Register() {
           aria-labelledby="demo-controlled-radio-buttons-group"
           name="addressType"
           value={formData.addressType}
-          onChange={handleInputChange}
+          onChange={handleChange}
           sx={{ width: '50%', display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', }}
         >
           <FormControlLabel value="Rural" control={<Radio />} label="Rural" sx={{ fontFamily: 'Inter !important', fontSize: '20px', color: '#000' }} />
@@ -169,23 +171,23 @@ export default function Register() {
         </RadioGroup>
         {formData.addressType === 'Urban' ? (
           <>
-            <CustomTextField label="Address" name="address" multiline={true} value={formData.address} onChange={handleInputChange} />
-            <CustomTextField label="Ward Number" name="wardNumber" value={formData.wardNumber} onChange={handleInputChange} />
-            <CustomTextField label="Block" name="block" value={formData.block} onChange={handleInputChange}/>
-            <CustomTextField label="Landmark" name="landmark" value={formData.landmark} onChange={handleInputChange} />
-            <CustomTextField label="District" name="district" value={formData.district} onChange={handleInputChange} />
-            <CustomTextField label="State" name="state" value={formData.state} onChange={handleInputChange} />
+            <CustomTextField label="Address" name="address" multiline={true} value={formData.address} handleChange={handleChange} />
+            <CustomTextField label="Ward Number" name="wardNumber" value={formData.wardNumber} handleChange={handleChange} />
+            <CustomTextField label="Block" name="block" value={formData.block} handleChange={handleChange}/>
+            <CustomTextField label="Landmark" name="landmark" value={formData.landmark} handleChange={handleChange} />
+            <CustomTextField label="District" name="district" value={formData.district} handleChange={handleChange} />
+            <CustomTextField label="State" name="state" value={formData.state} handleChange={handleChange} />
           </>
         ) : (
           <>
-            <CustomTextField label="Village" multiline={true} name="village" value={formData.village} onChange={handleInputChange}/>
-            <CustomTextField label="Panchayat" name="panchayat" value={formData.panchayat} onChange={handleInputChange} />
-            <CustomTextField label="Post Office" name="postOffice" value={formData.postOffice} onChange={handleInputChange} />
-            <CustomTextField label="Block" name="block" value={formData.block} onChange={handleInputChange} />
-            <CustomTextField label="Landmark" name="landmark" value={formData.landmark} onChange={handleInputChange} />
+            <CustomTextField label="Village" multiline={true} name="village" value={formData.village} handleChange={handleChange}/>
+            <CustomTextField label="Panchayat" name="panchayat" value={formData.panchayat} handleChange={handleChange} />
+            <CustomTextField label="Post Office" name="postOffice" value={formData.postOffice} handleChange={handleChange} />
+            <CustomTextField label="Block" name="block" value={formData.block} handleChange={handleChange}/>
+            <CustomTextField label="Landmark" name="landmark" value={formData.landmark} handleChange={handleChange} />
           </>
         )}
-        <CustomTextField label='Preferred Job Role' name="preferredJobRole" value={formData.preferredJobRole} onChange={handleInputChange}/>
+        <CustomTextField label='Preferred Job Role' name="preferredJobRole" value={formData.preferredJobRole} handleChange={handleChange}/>
         <Box className='date-time-container'>
           <TextField
             label="Photo"
@@ -253,7 +255,7 @@ export default function Register() {
           focused
           />
           </Box>
-        <CustomTextField label='Any Query?' multiline={true} name="anyQuery" value={formData.anyQuery} onChange={handleInputChange} />     
+        <CustomTextField label='Any Query?' multiline={true} name="anyQuery" value={formData.anyQuery} handleChange={handleChange} />     
         </Box>
         <Box sx={{width:'100%', marginTop:'34px', marginBottom:'54px',textAlign:'center'}}>
           <Button variant="contained" className='r-submit-btn' onClick={handleFormSubmit}>
