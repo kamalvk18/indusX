@@ -135,12 +135,12 @@ export default function CreateCamp() {
       <h3 className='cc-heading'>Venue</h3>
       <Box className='inputs-container' sx={{gap:'20px'}}>
         <CustomTextField  label='Address' multiline={true} name='address' value={formData.address} handleChange={handleChange}/>
+        
+            
+            <CustomTextField label='Block' type='number' name='block' value={formData.block}
+              handleChange={handleChange}/>
           <Box className='date-time-container'>
-           <Autocomplete label='District' name='district' value={formData.district}
-              handleAutocompleteChange={handleAutocompleteChange}
-              
-            />
-            <Autocomplete label='Block' name='block' value={formData.block}
+          <Autocomplete label='District' name='district' value={formData.district}
               handleAutocompleteChange={handleAutocompleteChange}/>
            <TextField
           label="Panchayat"
