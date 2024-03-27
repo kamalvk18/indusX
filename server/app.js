@@ -107,7 +107,7 @@ mongoose
       const newCamp = new Camp(req.body)
       const savedCamp = await newCamp.save()
       res.status(201).json(savedCamp)
-    } catch {
+    } catch(error) {
       console.error('Error creating Camp:', error);
       res.status(500).json({ message: 'Internal Server Error', error: error.message });
     }
