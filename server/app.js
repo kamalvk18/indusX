@@ -102,7 +102,7 @@ mongoose
     } catch (error) { }
   });
 
-  app.post("createCamp", async(req, res) => {
+  app.post("/createCamp", async(req, res) => {
     console.log(req.body)
   })
 
