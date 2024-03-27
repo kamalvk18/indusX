@@ -46,7 +46,13 @@ export default function CreateCamp() {
       [name]: value
     }));
   };
-  
+
+  const handleAutocompleteChange = (name, value) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
 
   return (
     <form className='cc-main-container' onSubmit={handleSubmit}>
@@ -128,8 +134,10 @@ export default function CreateCamp() {
       <Box className='inputs-container' sx={{gap:'20px'}}>
         <CustomTextField  label='Address' multiline={true} name='address' value={formData.address} onChange={handleChange}/>
           <Box className='date-time-container'>
-            <Autocomplete label='District' name='district' value={formData.district} onChange={handleChange}/>
-            <Autocomplete label='Block' name='block' value={formData.block} onChange={handleChange}/>
+           <Autocomplete label='District' name='district'value={formData.district} 
+            onChange={(value) => handleAutocompleteChange('district', value)}/>
+            <Autocomplete label='Block' name='block'value={formData.block}
+            onChange={(value) => handleAutocompleteChange('block', value)}/>
            <TextField
           label="Panchayat"
           name='panchayat'
