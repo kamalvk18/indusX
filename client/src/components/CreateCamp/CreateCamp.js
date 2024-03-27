@@ -60,9 +60,9 @@ export default function CreateCamp() {
     <form className='cc-main-container' onSubmit={handleSubmit}>
       <h3 className='cc-heading'>Basic Details</h3>
       <Box className='inputs-container' sx={{gap:'20px'}}>
-        <CustomTextField label='Scheme Name' name='schemeName' value={formData.schemeName} onChange={handleChange} />
-        <CustomTextField label='Sponsored Agency' name='sponsoredAgency' value={formData.sponsoredAgency} onChange={handleChange} />
-        <CustomTextField label='Event Title' name='eventTitle' value={formData.eventTitle} onChange={handleChange} />
+        <CustomTextField label='Scheme Name' name='schemeName' value={formData.schemeName} handleChange={handleChange} />
+        <CustomTextField label='Sponsored Agency' name='sponsoredAgency' value={formData.sponsoredAgency} handleChange={handleChange} />
+        <CustomTextField label='Event Title' name='eventTitle' value={formData.eventTitle} handleChange={handleChange} />
           <Box className='date-time-container'>
           <TextField
           label="Date"

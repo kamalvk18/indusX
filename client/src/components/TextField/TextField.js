@@ -2,8 +2,16 @@ import React from 'react'
 import { TextField } from '@mui/material'
 
 export default function CustomTextField(props) {
+  
+  const handleInputChange = (event) => {
+    props.handleChange(event)
+  }
+  
   return (
     <TextField
+         value={props.value}
+         name={props.name}
+         onChange={handleInputChange}
           id="filled"
           size="small"
           InputLabelProps={{

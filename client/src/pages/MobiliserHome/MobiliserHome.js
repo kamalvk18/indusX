@@ -21,7 +21,7 @@ import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import CreateCamp from '../../components/CreateCamp/CreateCamp';
 import { selectClasses } from '@mui/material';
 import Register from '../../components/Register/Register';
-import CampList from '../../components/CreateCamp/CampList';
+import CampList from '../../components/CampList/CampList';
 import CandidateList from '../../components/CandidateList/CandidateList';
 import MobiliserPayments from '../../components/Payments/MobiliserPayments';
 

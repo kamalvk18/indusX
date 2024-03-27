@@ -1,0 +1,9 @@
+.cl-main-container{
+  font-family: "inter";
+  background-color:  #F9F7F7;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}

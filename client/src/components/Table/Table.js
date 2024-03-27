@@ -10,8 +10,6 @@ import { makeStyles } from '@mui/styles';
 
 import './Table.css'
 
-
-
 const useStyles = makeStyles({
   tableContainer: {
     width: '90%',
