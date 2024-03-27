@@ -169,7 +169,7 @@ export default function Register() {
         </RadioGroup>
         {formData.addressType === 'Urban' ? (
           <>
-            <CustomTextField label="Address" name="address" value={formData.address} onChange={handleInputChange} />
+            <CustomTextField label="Address" name="address" multiline={true} value={formData.address} onChange={handleInputChange} />
             <CustomTextField label="Ward Number" name="wardNumber" value={formData.wardNumber} onChange={handleInputChange} />
             <CustomTextField label="Block" name="block" value={formData.block} onChange={handleInputChange}/>
             <CustomTextField label="Landmark" name="landmark" value={formData.landmark} onChange={handleInputChange} />
@@ -178,7 +178,7 @@ export default function Register() {
           </>
         ) : (
           <>
-            <CustomTextField label="Village" name="village" value={formData.village} onChange={handleInputChange}/>
+            <CustomTextField label="Village" multiline={true} name="village" value={formData.village} onChange={handleInputChange}/>
             <CustomTextField label="Panchayat" name="panchayat" value={formData.panchayat} onChange={handleInputChange} />
             <CustomTextField label="Post Office" name="postOffice" value={formData.postOffice} onChange={handleInputChange} />
             <CustomTextField label="Block" name="block" value={formData.block} onChange={handleInputChange} />
@@ -253,7 +253,7 @@ export default function Register() {
           focused
           />
           </Box>
-        <CustomTextField label='Any Query?'name="anyQuery" value={formData.anyQuery} onChange={handleInputChange} />     
+        <CustomTextField label='Any Query?' multiline={true} name="anyQuery" value={formData.anyQuery} onChange={handleInputChange} />     
         </Box>
         <Box sx={{width:'100%', marginTop:'34px', marginBottom:'54px',textAlign:'center'}}>
           <Button variant="contained" className='r-submit-btn' onClick={handleFormSubmit}>
