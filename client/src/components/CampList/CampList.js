@@ -88,7 +88,7 @@ export default function CampList() {
         rows={rowData.map((candidate, index) => ({
           ...candidate,
           Status: (
-            <FormControl variant="outlined">
+            <FormControl variant="outlined" style={{width:'90px'}}>
               <InputLabel>Status</InputLabel>
               <Select
                 value={candidate.status}
