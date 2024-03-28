@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
 import SignUp from "./pages/SignUp/SignUp";
 import UserDetails from "./components/userDetails";
-import AdminHome from "./components/candidate_view";
 import JustViewCandidate from "./components/just_view_cand";
 import CandidateUpdate from "./components/update_cand";
 import MobiliserHome from "./pages/MobiliserHome/MobiliserHome";
@@ -15,12 +14,9 @@ import Services from './pages/Services/Services';
 import './App.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import RegistrationForm from "./components/cand_reg";
 
 import Create from './components/Create';
-import View from "./components/View";
 import HandleEvent from "./components/HandleEvent";
-import CreatePayment from "./components/CreatePayment";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from './components/Footer/Footer'
 import MobiliserLeader from "./pages/MobiliserLeader/MobiliserLeader";
@@ -46,17 +42,12 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/userDetails" element={<UserDetails />} />
           <Route path='/just-view-candidate' element={<JustViewCandidate/>} /> 
-          <Route path ="/Home" element={<AdminHome/>}/>
           <Route path ="/candidate-update" element={<CandidateUpdate/>}/>
            
           <Route path ="/Mobiliser_Home" element={<MobiliserHome/>}/>
-          <Route path ="/Mobiliser_Leader" element={<MobiliserLeader/>}/> 
-          <Route path ="/students" element ={<AdminHome/>}/>
-          <Route path ="/register" element={<RegistrationForm/>}/>
+          <Route path ="/Mobiliser_Leader" element={<MobiliserLeader/>}/>
           <Route path='/create' element={<Create/>}/>
-          <Route path ='/view' element ={<View/>} />
           <Route path ='/edit' element ={<HandleEvent/>}/>
-          <Route path ='/payment' element={<CreatePayment/>}/>
 
         </Routes>
         <Footer />

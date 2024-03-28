@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-import AdminHome from "./candidate_view";
+
 
 import UserHome from "./userHome";
 
