@@ -23,7 +23,7 @@ import HandleEvent from "./components/HandleEvent";
 import CreatePayment from "./components/CreatePayment";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from './components/Footer/Footer'
-
+import MobiliserLeader from "./pages/MobiliserLeader/MobiliserLeader";
 
 function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
@@ -49,7 +49,8 @@ function App() {
           <Route path ="/Home" element={<AdminHome/>}/>
           <Route path ="/candidate-update" element={<CandidateUpdate/>}/>
            
-          <Route path ="/Mobiliser_Home" element={<MobiliserHome/>}/> 
+          <Route path ="/Mobiliser_Home" element={<MobiliserHome/>}/>
+          <Route path ="/Mobiliser_Leader" element={<MobiliserLeader/>}/> 
           <Route path ="/students" element ={<AdminHome/>}/>
           <Route path ="/register" element={<RegistrationForm/>}/>
           <Route path='/create' element={<Create/>}/>
