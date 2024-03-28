@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import CustomTable from '../../components/CustomTable/CustomTable'
-
+import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import {
@@ -25,6 +25,18 @@ const useStyles = makeStyles(() => ({
 
 export default function CampList() {
   const classes = useStyles()
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/getCamps')
+      .then((response) => {
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+
+  }, []);
+
   return (
     <div className='cl-main-container'>
        <TextField
@@ -37,7 +49,6 @@ export default function CampList() {
               <SearchIcon  size='small'/>
             </InputAdornment>
           ),
-          
         }}
         sx={{
           "& label.Mui-focused": {
