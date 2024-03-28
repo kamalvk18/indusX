@@ -104,11 +104,27 @@ mongoose
 
   app.post("/createCamp", async(req, res) => {
     try{
-      const newCamp = new Camp(req.body)
+      const {date, time, ...others} = req.body
+      const [year, month, day] = date.split('-');
+      const [hour, minute] = time.split(':');
+      const combinedDate = new Date(Date.UTC(year, month - 1, day, hour, minute));
+
+      const newCamp = new Camp({date: combinedDate, ...others})
       const savedCamp = await newCamp.save()
       res.status(201).json(savedCamp)
     } catch(error) {
       console.error('Error creating Camp:', error);
+      res.status(500).json({ message: 'Internal Server Error', error: error.message });
+    }
+  })
+
+  app.get("/getCamps", async(req, res) => {
+    try{
+      const allCamps = await Camp.find()
+      console.log(allCamps)
+      res.status(200).json(allCamps)
+    } catch(error) {
+      console.error('Error getting Camps:', error);
       res.status(500).json({ message: 'Internal Server Error', error: error.message });
     }
   })
