@@ -16,7 +16,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications'
 import { useNavigate } from 'react-router-dom';
 
 import './Navbar.css'
-import '../../pages/MobiliserHome/MobiliserHome.css'
+import '../../pages/Mobiliser/Mobiliser.css'
 
 const pages = [{page:'Home', path:''}, {page:'About Us', path:'about'},{page: 'Services', path:'services'},  {page:'Contant Us',path:'contact'},];
 
@@ -77,7 +77,7 @@ export default function Navbar() {
       )
     }
 
-    else if (location.pathname === '/Mobiliser_Home'){
+    else if (location.pathname === '/mobiliser' || location.pathname === '/leader'){
       return(
         <div className="navvbar-buttons">
         <div className='icons-container'>

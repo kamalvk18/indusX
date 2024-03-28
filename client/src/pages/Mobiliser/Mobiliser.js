@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MobiliserDashboard from '../../components/MobiliserDashboard/MobiliserDashboard';
 import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './MobiliserHome.css';
+import './Mobiliser.css';
 import GridViewIcon from '@mui/icons-material/GridView';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';

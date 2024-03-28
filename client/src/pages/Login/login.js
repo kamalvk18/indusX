@@ -1,8 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import './login.css'
-import "./css/util.css"
-import "./css/main.css"
-import "./fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+import '../../components/css/util.css'
+import "../../components/css/main.css"
 
 export default function Login() {
   const [email, setEmail] = useState("");

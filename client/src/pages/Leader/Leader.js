@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MobiliserDashboard from '../../components/MobiliserDashboard/MobiliserDashboard';
 import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './MobiliserLeader.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import PersonIcon from '@mui/icons-material/Person';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import './Leader.css';
 import GridViewIcon from '@mui/icons-material/GridView';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
@@ -19,11 +16,13 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import CreateCamp from '../../components/CreateCamp/CreateCamp';
-import { selectClasses } from '@mui/material';
 import Register from '../../components/Register/Register';
 import CampList from '../../components/CampList/CampList';
 import CandidateList from '../../components/CandidateList/CandidateList';
 import MobiliserPayments from '../../components/Payments/MobiliserPayments';
+import ManageHistoryIcon from '@mui/icons-material/ManageHistory';
+import TocIcon from '@mui/icons-material/Toc';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 
 
 const MobiliserLeader = () => {
@@ -34,6 +33,7 @@ const MobiliserLeader = () => {
   const [candidates, setCandidates] = useState([]);
   const [Tcandidates, setTCandidates] = useState([]);
   const [selectedPath, setSelectedPath] = useState('dashboard')
+  const [manageMobiliser, setManageMobiliser] = useState(false)
   const navigate = useNavigate();
   const getRecentlyRegisteredStudents = (events) => {
     // Convert the registrationDate strings to Date objects
@@ -105,25 +105,6 @@ const MobiliserLeader = () => {
 
   return (
     <div className="app-container">
-      <nav className="navbar">
-        <div className='image-container'>
-          <img src='https://sgrsgroup.com/wp-content/uploads/2023/06/1200x300px.png' className='company-logo'/>
-        </div>
-        <div className="navvbar-buttons">
-          <div className='icons-container'>
-            <NotificationsIcon/>
-            <PersonIcon onClick={toggleProfileDropdown} sx={{cursor:'pointer'}}/> 
-          </div>
-          {profileDropdownVisible && (
-            <div className="profile-dropdown">
-              <ul>
-                <li>My Profile</li>
-                <li onClick={logout}>Logout</li>
-              </ul>
-            </div>
-          )}
-        </div>
-      </nav>
       <div className="content-wrapper">
         <div className="sidebar">
           <ul className='sidebar-list-container'>
@@ -165,6 +146,24 @@ const MobiliserLeader = () => {
             </li> <li className={selectedPath ==='candidateList' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('candidateList')}>
                 <FormatListNumberedIcon/>
                 <p>Candidate List</p>
+              
+            </li>
+            </>
+            }
+            <li onClick={() => setManageMobiliser(!manageMobiliser)}>
+                <ManageHistoryIcon />
+                <p>Manage Mobiliser</p>
+                {manageMobiliser ? <KeyboardArrowDownIcon fontSize='large'/>: <ArrowForwardIosIcon sx={{fontSize:'20px'}} />}
+            </li>
+            {manageMobiliser &&
+              <>
+              <li className={selectedPath ==='registration' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('registration')}>
+                <Diversity3Icon/>
+                <p>Registration</p>
+              
+            </li> <li className={selectedPath ==='mobiliserList' ? 'selectedTab': ''} onClick={() => handleLeftNavPaths('mobiliserList')}>
+                <TocIcon/>
+                <p>Mobiliser List</p>
               
             </li>
             </>
