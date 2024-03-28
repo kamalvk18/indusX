@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from 'react'
 import CustomTable from '../../components/CustomTable/CustomTable'
-import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import {
@@ -12,7 +11,6 @@ import './CampList.css'
 const tableHeaders = [
   'Scheme name', 'Sponsored agency', 'Event title', 'Date', 'Venue', 'Guest', 'Status'
 ]
-const rowData =  ['Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty','Empty',]
 
 const useStyles = makeStyles(() => ({
   textField:{
