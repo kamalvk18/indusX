@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import CustomTable from '../../components/CustomTable/CustomTable'
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,7 +12,7 @@ import './CampList.css'
 const tableHeaders = [
   'Scheme name', 'Sponsored agency', 'Event title', 'Date', 'Venue', 'Guest', 'Status'
 ]
-const rowData =  ['Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty','Empty',]
+
 
 const useStyles = makeStyles(() => ({
   textField:{
@@ -25,17 +25,24 @@ const useStyles = makeStyles(() => ({
 
 export default function CampList() {
   const classes = useStyles()
-  useEffect(() => {
-    axios
-      .get('http://localhost:5000/getCamps')
-      .then((response) => {
-        console.log(response.data)
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
+  const [rowData, setRowData] = useState([]);
 
+  useEffect(() => {
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/getCamps');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setRowData(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   return (
     <div className='cl-main-container'>
