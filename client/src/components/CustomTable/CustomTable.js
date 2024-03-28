@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-const tableKeys = ['schemeName', 'sponsoredAgency', 'eventTitle', 'date']
+const tableKeys = ['schemeName', 'sponsoredAgency', 'eventTitle', 'date','address','guestName','Status']
 
 export default function CustomTable(props) {
     const classes = useStyles()
