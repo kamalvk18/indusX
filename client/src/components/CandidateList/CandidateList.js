@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import CustomTable from '../../components/CustomTable/CustomTable'
-import { Box } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
+import EditIcon from '@material-ui/icons/Edit';
+import VisibilityIcon from '@material-ui/icons/Visibility';
 import './CandidateList.css'
 import {
   InputAdornment,
@@ -13,7 +14,7 @@ import './CandidateList.css'
 const tableHeaders = [
   'S.No', 'Name', 'Candidate ID', 'Mobile  No.', 'Aadhar No.', 'Status', 'Action'
 ]
-const rowData =  ['Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty','Empty',]
+
 
 const useStyles = makeStyles(() => ({
   textField:{
@@ -26,6 +27,35 @@ const useStyles = makeStyles(() => ({
 
 export default function CandidateList() {
   const classes = useStyles()
+  const [candidates, setCandidates] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('backend-api');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setCandidates(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const handleEdit = (candidateId) => {
+    // Handle edit action here, navigate to edit page
+    console.log('Edit candidate with ID:', candidateId);
+  };
+
+  const handleView = (candidateId) => {
+    // Handle view action here, navigate to view page
+    console.log('View candidate with ID:', candidateId);
+  };
+
   return (
     <div className='cl-main-container'>
        <TextField
@@ -60,7 +90,17 @@ export default function CandidateList() {
         //onChange={handleSearchChange}
       />
         <h3 className='cl-heading'>Cadidate List</h3> 
-      <CustomTable rows={rowData} tableHeaders={tableHeaders}/>
+      <CustomTable rows={candidates.map((candidate, index) => ({
+          ...candidate,
+          Action: (
+            <div>
+              <EditIcon style={{ cursor: 'pointer', marginRight: '10px' }} onClick={() => handleEdit(candidate._id)} />
+              <VisibilityIcon style={{ cursor: 'pointer' }} onClick={() => handleView(candidate._id)} />
+            </div>
+          )
+        }))} 
+        tableHeaders={tableHeaders} />
     </div>
   )
 }
+
