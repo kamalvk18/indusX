@@ -5,6 +5,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import {
   InputAdornment,
   TextField,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from '@material-ui/core';
 import './CampList.css'
 
@@ -42,6 +46,12 @@ export default function CampList() {
     }
   };
 
+   const handleStatusChange = (index, value) => {
+    const updatedRowData = [...rowData];
+    updatedRowData[index].status = value;
+    setRowData(updatedRowData);
+  };
+
   return (
     <div className='cl-main-container'>
        <TextField
@@ -74,7 +84,25 @@ export default function CampList() {
 
         //onChange={handleSearchChange}
       />
-      <CustomTable rows={rowData} tableHeaders={tableHeaders}/>
+      <CustomTable
+        rows={rowData.map((candidate, index) => ({
+          ...candidate,
+          Status: (
+            <FormControl variant="outlined">
+              <InputLabel>Status</InputLabel>
+              <Select
+                value={candidate.status}
+                onChange={(e) => handleStatusChange(index, e.target.value)}
+                label="Status"
+              >
+                <MenuItem value="success">Success</MenuItem>
+                <MenuItem value="failure">Failure</MenuItem>
+              </Select>
+            </FormControl>
+          ),
+        }))}
+        tableHeaders={tableHeaders}
+      />
     </div>
   )
 }
