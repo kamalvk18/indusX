@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from 'react'
 import CustomTable from '../../components/CustomTable/CustomTable'
-
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import {
@@ -12,7 +11,6 @@ import './CampList.css'
 const tableHeaders = [
   'Scheme name', 'Sponsored agency', 'Event title', 'Date', 'Venue', 'Guest', 'Status'
 ]
-
 
 const useStyles = makeStyles(() => ({
   textField:{
@@ -33,7 +31,7 @@ export default function CampList() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('backend-api');
+      const response = await fetch('http://localhost:5000/getCamps');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -56,7 +54,6 @@ export default function CampList() {
               <SearchIcon  size='small'/>
             </InputAdornment>
           ),
-          
         }}
         sx={{
           "& label.Mui-focused": {

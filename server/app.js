@@ -113,6 +113,17 @@ mongoose
     }
   })
 
+  app.get("/getCamps", async(req, res) => {
+    try{
+      const allCamps = await Camp.find()
+      console.log(allCamps)
+      res.status(200).json(allCamps)
+    } catch(error) {
+      console.error('Error getting Camps:', error);
+      res.status(500).json({ message: 'Internal Server Error', error: error.message });
+    }
+  })
+
 
   app.get('/students', async (req, res) => {
     try {
