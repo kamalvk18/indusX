@@ -1,14 +1,37 @@
 const mongoose = require('mongoose');
 const campSchema = new mongoose.Schema({
-    schemeName: String,
-    sponsoredAgency: String,
-    eventTitle: String,
-    date: Date,
-    time: String,
-    address: String,
-    district: String,
-    block: Number,
-    panchayat: String,
+    schemeName: {
+        type: String,
+        required: true,
+    },
+    sponsoredAgency: {
+        type: String,
+        required: true,
+    },
+    eventTitle: {
+        type: String,
+        required: true,
+    },
+    date: {
+        type: Date,
+        required: true,
+    },
+    address: {
+        type: String,
+        required: true,
+    },
+    district: {
+        type: String,
+        required: true,
+    },
+    block: {
+        type: Number,
+        required: true,
+    },
+    panchayat: {
+        type: String,
+        required: true,
+    },
     landmark: String,
     guestName: String,
     guestDetails: String,

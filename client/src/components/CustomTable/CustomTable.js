@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-
+const tableKeys = ['schemeName', 'sponsoredAgency', 'eventTitle', 'date']
 
 export default function CustomTable(props) {
     const classes = useStyles()
@@ -38,21 +38,20 @@ export default function CustomTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-        <TableRow
-              sx={{ "&:last-child td, &:last-child th": { borderBottom:'none',}, height:'70px' }}
-            >
-          {rows.map((row) => (
-           
-              <TableCell
-                component="th"
-                scope="row"
-                sx={{ borderWidth:'1px 1px 1px 1px', borderColor:'#5B5B5B',  borderRight: "1px solid #5B5B5B" }}
-              >
-               (Empty)
-              </TableCell>  
-       
-          ))}
-               </TableRow>
+        {rows.map((row, rowIndex) => (
+          <TableRow key={rowIndex}>
+              {tableKeys.map((item, index) => (
+                  <TableCell
+                      key={index}
+                      component="th"
+                      scope="row"
+                      sx={{ borderWidth:'1px 1px 1px 1px', borderColor:'#5B5B5B', borderRight: "1px solid #5B5B5B" }}
+                  >
+                      {row[item]}
+                  </TableCell>
+              ))}
+          </TableRow>
+        ))}
         </TableBody>
       </Table>
     </TableContainer>
