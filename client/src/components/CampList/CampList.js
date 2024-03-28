@@ -12,7 +12,7 @@ import './CampList.css'
 const tableHeaders = [
   'Scheme name', 'Sponsored agency', 'Event title', 'Date', 'Venue', 'Guest', 'Status'
 ]
-
+const rowData =  ['Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty','Empty',]
 
 const useStyles = makeStyles(() => ({
   textField:{
