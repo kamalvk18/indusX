@@ -3,9 +3,6 @@ import MobiliserDashboard from '../../components/MobiliserDashboard/MobiliserDas
 import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './MobiliserHome.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import PersonIcon from '@mui/icons-material/Person';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import GridViewIcon from '@mui/icons-material/GridView';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
@@ -68,13 +65,6 @@ const MobiliserHome = () => {
 
   }, []);
 
-  const toggleProfileDropdown = () => {
-    setProfileDropdownVisible(!profileDropdownVisible);
-  };
-
-  const logout = () => {
-    navigate('/login-user')
-  };
 
   const handleNavigateToRegister = () => {
     navigate('/register'); // Replace '/register' with the path to your RegistrationForm component
@@ -105,25 +95,6 @@ const MobiliserHome = () => {
 
   return (
     <div className="app-container">
-      <nav className="navbar">
-        <div className='image-container'>
-          <img src='https://sgrsgroup.com/wp-content/uploads/2023/06/1200x300px.png' className='company-logo'/>
-        </div>
-        <div className="navvbar-buttons">
-          <div className='icons-container'>
-            <NotificationsIcon/>
-            <PersonIcon onClick={toggleProfileDropdown} sx={{cursor:'pointer'}}/> 
-          </div>
-          {profileDropdownVisible && (
-            <div className="profile-dropdown">
-              <ul>
-                <li>My Profile</li>
-                <li onClick={logout}>Logout</li>
-              </ul>
-            </div>
-          )}
-        </div>
-      </nav>
       <div className="content-wrapper">
         <div className="sidebar">
           <ul className='sidebar-list-container'>
